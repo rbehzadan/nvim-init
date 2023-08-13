@@ -1,7 +1,3 @@
-require("options")
-require("key-mappings")
-
-vim.cmd("hi Folded guifg=grey guifg=NONE")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -14,7 +10,13 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
 
--- require("statusline").setup()
+vim.opt.rtp:prepend(lazypath)
+
+vim.cmd("hi Folded guifg=grey guifg=NONE")
+
+
+require("options")
+require("key-mappings")
+
+require("lazy").setup("plugins")
